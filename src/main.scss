@@ -1,0 +1,199 @@
+// <-- common
+
+@import "fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// common -->
+
+// <-- HEADER
+
+.header {
+  padding: 30px 0;
+  color: #fff;
+  font-family: 'Dosis', sans-serif;
+  background: url("images/header-phones@1x.png") bottom right no-repeat,
+  linear-gradient(to right, #fd712c, #ee216e);
+
+  @media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    background: url("images/header-phones@2x.png") bottom right no-repeat,
+    linear-gradient(to right, #fd712c, #ee216e);
+  }
+}
+
+.wrapper-header {
+  padding: 0 40px;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.name-app__head,
+.logo {
+  display: inline;
+}
+
+.name-app__head {
+  font-size: 36px;
+}
+
+.header__navigation,
+.wrapper-right-part,
+.navigation__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.header__navigation {
+  justify-content: center;
+  margin-bottom: 30px;
+
+  @media (min-width: 768px) {
+    justify-content: space-between;
+  }
+}
+
+.wrapper-right-part {
+  justify-content: space-around;
+
+  & > * {
+    margin: 0 20px;
+  }
+}
+
+.navigation__list {
+  list-style: none;
+  justify-content: space-around;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+
+  @media (max-width: 321px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.list-item {
+  padding: 0 15px;
+
+  @media (min-width: 768px) {
+    padding-right: 42px;
+  }
+}
+
+.header__button-download,
+.banners__button-start-exploring {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 6px 25px;
+  border-radius: 25px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  transition: box-shadow .2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 10px 1px #8f8f8f;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 10px 5px #fff;
+  }
+}
+
+.banners__features {
+  list-style-position: inside;
+  margin-bottom: 20px;
+  margin-bottom: 35px;
+}
+
+.banners {
+  @media (max-width: 360px) {
+    padding: 100px 0;
+  }
+
+  @media (min-width: 360px) {
+    padding: 150px 0;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 500px;
+  }
+
+  @media (max-width: 1400px) {
+    & > *:not(button) {
+      background-color: rgba(119, 119, 119, .6);
+      padding: 10px;
+      border-radius: 10px;
+    }
+  }
+}
+
+.banners__promo-head {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 600;
+
+  @media (min-width: 768px) {
+    font-size: 54px;
+  }
+}
+
+.banners__promo-text {
+  margin-bottom: 20px;
+}
+
+.features__item {
+  position: relative;
+  list-style: none;
+  padding-left: 25px;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 25%;
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 40%;
+    width: 3px;
+    border-bottom: 2px solid #fd712c;
+    height: 6px;
+    border-right: 2px solid #fd712c;
+    transform: rotate(45deg);
+  }
+}
+
+.banners__button-start-exploring {
+  box-shadow: 0 0 0 5px rgba(0, 0, 0, .1);
+}
+
+// HEADER -->
