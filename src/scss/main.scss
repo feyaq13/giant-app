@@ -1,4 +1,5 @@
 // <-- common
+$color-text: #777;
 
 @import "fonts";
 
@@ -19,9 +20,11 @@
 h2,
 h3 {
   font-family: "Dosis", sans-serif;
+  font-weight: 600;
 }
 
 h2 {
+  margin-bottom: 35px;
   font-size: 36px;
 }
 
@@ -45,6 +48,39 @@ h3 {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+}
+
+@mixin checkmarks ($selector, $color-check, $color-bg) {
+  #{$selector} {
+    position: relative;
+    list-style: none;
+    padding-left: 35px;
+    @include text-in-block;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 25%;
+      content: "";
+      width: 15px;
+      height: 15px;
+      background-color: $color-bg;
+      border-radius: 50%;
+    }
+
+    &:after {
+      color: #fff;
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 35%;
+      width: 3px;
+      border-bottom: 2px solid $color-check;
+      height: 6px;
+      border-right: 2px solid $color-check;
+      transform: rotate(45deg);
+    }
+  }
 }
 
 // common -->
@@ -198,36 +234,11 @@ h3 {
 .banners__promo-text {
   margin-bottom: 20px;
   @include text-in-block;
+  line-height: 1.5;
 }
 
-.features__item {
-  position: relative;
-  list-style: none;
-  padding-left: 25px;
-  @include text-in-block;
-
-  &:before {
-    position: absolute;
-    left: 0;
-    top: 25%;
-    content: "";
-    width: 15px;
-    height: 15px;
-    background-color: #fff;
-    border-radius: 50%;
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: 40%;
-    width: 3px;
-    border-bottom: 2px solid #fd712c;
-    height: 6px;
-    border-right: 2px solid #fd712c;
-    transform: rotate(45deg);
-  }
+.banners__features {
+  @include checkmarks('.features__item', #fd712c, #fff);
 }
 
 .banners__button-start-exploring {
@@ -298,7 +309,10 @@ h3 {
 
   p {
     @include text-in-block;
-    color: #777;
+    color: $color-text;
     line-height: 2;
   }
 }
+
+// SECTION ADVANTAGES -->
+
