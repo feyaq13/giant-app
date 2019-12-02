@@ -24,7 +24,7 @@ h3 {
 }
 
 h2 {
-  margin-bottom: 35px;
+  margin-bottom: 15px;
   font-size: 36px;
 }
 
@@ -323,10 +323,6 @@ h3 {
   padding-top: 50px;
   padding-bottom: 50px;
 
-  @media (min-width: 480px) {
-    line-height: 2;
-  }
-
   @media (min-width: 768px) {
     display: flex;
   }
@@ -374,6 +370,10 @@ h3 {
   @include text-in-block;
   color: $color-text;
 
+  @media (min-width: 480px) {
+    line-height: 2;
+  }
+
   &:first-of-type {
     margin-bottom: 60px;
   }
@@ -386,6 +386,10 @@ h3 {
 .section-demos__demos-list {
   @include checkmarks('.demos-list__item', #fff, #000);
   color: $color-text;
+
+  @media (min-width: 480px) {
+    line-height: 2;
+  }
 }
 
 // SECTION DEMOS -->
