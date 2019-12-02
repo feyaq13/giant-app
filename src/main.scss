@@ -235,3 +235,70 @@ h3 {
 }
 
 // HEADER -->
+
+// <-- SECTION ADVANTAGES
+
+.section-advantages {
+  @include dimension-partition;
+}
+
+.section-advantages__advantages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-bottom: 1px solid rgb(238, 238, 238);
+  padding-top: 50px;
+  padding-bottom: 60px;
+
+  @media (min-width: 768px) {
+    padding-top: 120px;
+  }
+}
+
+.advantage {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-right: 25px;
+
+  &:not(:last-child) {
+    margin-bottom: 25px;
+  }
+
+  @media (min-width: 768px) {
+    flex-basis: 30%;
+
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.wrapper-advantage-icon {
+  width: 25px;
+  height: 25px;
+  padding: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(238, 238, 238);
+  border-radius: 50%;
+}
+
+.advantage__description {
+  flex-basis: 70%;
+  flex-grow: 1;
+  margin-left: 20px;
+
+  h3 {
+    margin-bottom: 15px;
+  }
+
+  p {
+    @include text-in-block;
+    color: #777;
+    line-height: 2;
+  }
+}
