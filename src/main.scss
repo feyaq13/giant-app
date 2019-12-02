@@ -65,9 +65,7 @@ h3 {
 }
 
 .wrapper-header {
-  padding: 0 40px;
-  margin: auto;
-  max-width: 1200px;
+  @include dimension-partition;
 }
 
 .name-app__head,
@@ -162,7 +160,6 @@ h3 {
 
 .banners__features {
   list-style-position: inside;
-  margin-bottom: 20px;
   margin-bottom: 35px;
 }
 
@@ -200,12 +197,14 @@ h3 {
 
 .banners__promo-text {
   margin-bottom: 20px;
+  @include text-in-block;
 }
 
 .features__item {
   position: relative;
   list-style: none;
   padding-left: 25px;
+  @include text-in-block;
 
   &:before {
     position: absolute;
