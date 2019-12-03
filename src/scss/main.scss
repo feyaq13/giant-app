@@ -24,7 +24,7 @@ h3 {
 }
 
 h2 {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   font-size: 36px;
 }
 
@@ -342,11 +342,9 @@ h3 {
     content: "";
     position: absolute;
     left: 0;
-    width: 80%;
     width: 100%;
     border-radius: 50%;
     height: 2px;
-    top: 80%;
     top: 90%;
     background: transparent;
     box-shadow: 10px 20px 15px rgba(0, 0, 0, .4);
@@ -562,3 +560,146 @@ h3 {
 }
 
 // SECTION SCREENSHOTS-SLIDER -->
+
+// <-- SECTION PRICE-LIST
+
+.section-pricing {
+  @include dimension-partition;
+  text-align: center;
+  padding-top: 119px;
+  padding-bottom: 119px;
+}
+
+.section-pricing__description {
+  @include text-in-block;
+  color: $color-text;
+  max-width: 650px;
+  margin-bottom: 70px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tariff__title,
+.tariff__price {
+  font-weight: 500;
+  font-family: "Dosis", sans-serif;
+}
+
+.tariff__title {
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.tariff {
+  display: inline-block;
+  background-color: #f7fafc;
+  margin: 10px 10px 15px;
+  transition: box-shadow .5s ease-in-out, transform .3s ease-in-out;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .1);
+    }
+
+    &:nth-child(3):hover,
+    &:nth-child(4):hover {
+      box-shadow: 0 10px 30px 10px rgba(0, 0, 0, .1);
+    }
+  }
+}
+
+.tariff:hover .tariff__price,
+.tariff:hover .tariff__button {
+  color: #fff;
+  background: linear-gradient(to right, #fd712c, #ee216e);
+}
+
+.tariff:hover .tariff__button {
+  border: 2px solid #e3e3e3;
+}
+
+.tariff__price {
+  font-size: 50px;
+  line-height: .8;
+  position: relative;
+  margin-bottom: 25px;
+  background-color: #fff;
+  padding: 25px 0 45px;
+  cursor: pointer;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 70%;
+    width: 50%;
+    margin: 1px -1px;
+    height: 33px;
+    overflow: hidden;
+  }
+
+  &:before {
+    right: 0;
+    background: linear-gradient(to right bottom, transparent 50%, #f7fafc 50%);
+  }
+
+  &:after {
+    left: 0;
+    background: linear-gradient(to left bottom, transparent 50%, #f7fafc 50%);
+  }
+
+  .price-text {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    margin-right: 10px;
+  }
+
+  sup {
+    position: absolute;
+    left: -10px;
+    vertical-align: top;
+  }
+
+  sub {
+    position: absolute;
+    bottom: 0;
+    vertical-align: baseline;
+  }
+
+  sup, sub {
+    font-size: 20px;
+  }
+}
+
+.tariff__options {
+  display: inline-block;
+
+  &,
+  & + p {
+    color: $color-text;
+    @include text-in-block;
+    padding: 20px 50px;
+  }
+
+  & > p {
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #e3e3e3;
+  }
+}
+
+.tariff__button {
+  padding: 5px 15px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px #fd712c;
+  }
+}
