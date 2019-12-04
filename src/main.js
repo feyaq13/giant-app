@@ -1,9 +1,8 @@
-const jQuery = require('jquery');
+// $(".slider").dnSlide({
+//   "response": true,
+//   afterClickBtnFn: function (i) {
+//     console.log(i);
+//   }
+// });
 
-jQuery(".slider").dnSlide({
-  "response": true,
-  afterClickBtnFn: function (i) {
-    console.log(i);
-  }
-});
 
