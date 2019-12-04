@@ -50,7 +50,7 @@ h3 {
   font-weight: 300;
 }
 
-@mixin checkmarks ($selector, $color-check, $color-bg) {
+@mixin checkmarks($selector, $color-check, $color-bg) {
   #{$selector} {
     position: relative;
     list-style: none;
@@ -601,14 +601,13 @@ h3 {
   }
 }
 
-.section-video__video{
+.section-video__video {
   visibility: hidden;
   display: block;
   height: auto;
   margin: auto;
   max-width: 100%;
 }
-
 
 // SECTION VIDEO -->
 
@@ -619,7 +618,6 @@ $width: 300px;
 
 .section-reviews {
   $padding: 119px;
-  //@include dimension-partition;
   padding-top: $padding;
   padding-bottom: $padding;
   position: relative;
@@ -638,7 +636,6 @@ $width: 300px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
-  padding: 20px;
 }
 
 .slider-reviews {
@@ -651,7 +648,7 @@ $width: 300px;
     max-width: 200px;
   }
 
-  @media  (min-width: $width * 1 + $padding) {
+  @media (min-width: $width * 1 + $padding) {
     max-width: $width * 1;
   }
 
@@ -724,11 +721,11 @@ $width: 300px;
   padding: 20px;
   transition: box-shadow .3s ease-in-out;
 
-  @media  (max-width: 320px) {
+  @media (max-width: 320px) {
     min-width: 100%;
   }
 
-  @media  (min-width: $width * 1 + $padding) {
+  @media (min-width: $width * 1 + $padding) {
     max-width: calc(100% / 1);
   }
 
@@ -751,11 +748,6 @@ $width: 300px;
   &:hover {
     box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
   }
-}
-
-/* состояние по-умолчанию, так как первой картинке предшествующих ей нет */
-.slider-reviews__prev {
-  //display: none;
 }
 
 .slider-reviews__prev,
