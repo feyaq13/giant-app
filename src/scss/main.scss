@@ -612,9 +612,10 @@ $padding: 119px;
 
 .section-reviews {
   $padding: 119px;
-  max-width: 100%;
+  @include dimension-partition;
   text-align: center;
-  padding: $padding;
+  padding-top: $padding;
+  padding-bottom: $padding;
 }
 
 .section-reviews__description {
@@ -630,6 +631,7 @@ $padding: 119px;
   overflow: hidden;
   position: relative;
   margin: 0 auto 20px;
+  max-width: 250px;
 
   @media  (min-width: 250px + $padding) {
     max-width: calc(250px * 1);
@@ -668,8 +670,7 @@ $padding: 119px;
 }
 
 .slide {
-  // ориентировочная ширина
-  width: 250px;
+  max-width: 100%;
 
   @media  (min-width: 250px + $padding) {
     max-width: calc(100% / 1);
