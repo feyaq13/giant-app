@@ -37,8 +37,10 @@ $( document ).ready(function() {
   document.addEventListener("load", checkCounter());
 
   function checkCounter () {
-    btnPrev.style.display = (counter === 0) ? "none" : "block";
-    btnNext.style.display = (slidesLength > 0) ? "block" : "none";
+    // btnPrev.style.display = (counter === 0) ? "none" : "block";
+    btnPrev.disabled = (counter === 0) ? true : false;
+    // btnNext.style.display = (slidesLength > 0) ? "block" : "none";
+    btnNext.disabled = (slidesLength > 0) ? false : true;
   }
 
   function slideNext() {
@@ -46,8 +48,10 @@ $( document ).ready(function() {
       imgs.style.transform += "translate(-100%)";
       ++counter;
 
-      btnPrev.style.display = (counter === 0) ? "none" : "block";
-      btnNext.style.display = (counter < slidesLength - 1) ? "block" : "none";
+      // btnPrev.style.display = (counter === 0) ? "none" : "block";
+      btnPrev.disabled = (counter === 0) ? true : false;
+      // btnNext.style.display = (counter < slidesLength - 1) ? "block" : "none";
+      btnNext.disabled  = (counter < slidesLength - 1) ? false : true;
     }
   }
 
@@ -56,8 +60,10 @@ $( document ).ready(function() {
       --counter;
       imgs.style.transform += "translate(100%)";
 
-      btnPrev.style.display = (counter === 0) ? "none" : "block";
-      btnNext.style.display = (counter < slidesLength) ? "block" : "none";
+      // btnPrev.style.display = (counter === 0) ? "none" : "block";
+      btnPrev.disabled = (counter === 0) ? true : false;
+      // btnNext.style.display = (counter < slidesLength) ? "block" : "none";
+      btnNext.disabled = (counter < slidesLength) ? false : true;
     }
   }
 

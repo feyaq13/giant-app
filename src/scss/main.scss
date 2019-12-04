@@ -728,7 +728,7 @@ $width: 350px;
 
 /* состояние по-умолчанию, так как первой картинке предшествующих ей нет */
 .slider-reviews__prev {
-  display: none;
+  //display: none;
 }
 
 .slider-reviews__prev,
@@ -741,6 +741,11 @@ $width: 350px;
   height: 55px;
   background-color: rgba(299, 299, 299, 0.6);
   transition: background-color .3s;
+
+  &:disabled {
+    background: #cfcfcf;
+    cursor: not-allowed;
+  }
 }
 
 .slider-reviews__next {
@@ -754,10 +759,5 @@ $width: 350px;
   left: 50px;
   background: linear-gradient(to right, #fd712c, #ee216e);
   border-radius: 50%;
-}
-
-.slider-reviews__prev:hover,
-.slider-reviews__next:hover {
-  background-color: rgba(299, 299, 299, 1);
 }
 
