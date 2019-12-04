@@ -65,4 +65,19 @@ $( document ).ready(function() {
       btnNext.disabled = (counter < slidesLength) ? false : true;
     }
   }
+
+  const scrollTopAnimationDurationMs = 1000;
+
+  $('.navigation__list').on('click', 'a', goDownLink);
+
+  function goDownLink(event) {
+    const listItem = $(this).attr('href');
+    const top = $(listItem).offset().top;
+    event.preventDefault();
+
+    $('body,html').animate(
+      { scrollTop: top },
+      scrollTopAnimationDurationMs
+    );
+  }
 });
