@@ -12,7 +12,7 @@ function showAndPlay() {
     'background', 'rgba(0, 0, 0, .9)'
   );
   $(this).hide();
-  $('.section-video__video').show().get(0).play();
+  $('.section-video__video').css('visibility', 'visible').get(0).play();
 }
 
 const imgs = document.querySelector(".slider-reviews__wrapper-imgs");
