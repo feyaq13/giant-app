@@ -611,7 +611,7 @@ h3 {
 // <-- SECTION REVIEWS
 
 $padding: 119px;
-$width: 350px;
+$width: 300px;
 
 .section-reviews {
   $padding: 119px;
@@ -704,6 +704,7 @@ $width: 350px;
 .slide {
   max-width: 100%;
   min-width: $width;
+  padding: 0 20px;
 
   @media  (min-width: $width * 1 + $padding) {
     max-width: calc(100% / 1);
