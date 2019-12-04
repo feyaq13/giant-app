@@ -400,6 +400,10 @@ h3 {
 .section-screenshots-slider {
   background-color: #f7fafc;
   text-align: center;
+
+  img {
+    max-width: 100%;
+  }
 }
 
 .wrapper-screenshots-slider {
@@ -767,6 +771,22 @@ $width: 300px;
   &:disabled {
     background: #cfcfcf;
     cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  &:hover {
+    outline: none;
+    box-shadow: 0 0 5px 2px #fd712c;
+
+    &:disabled {
+      box-shadow: none;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    border: 2px solid #e3e3e3;
+    box-shadow: 0 0 5px 2px #fd712c;
   }
 
   @media (max-width: 480px) {
@@ -774,7 +794,7 @@ $width: 300px;
     width: 30px;
 
     & .icon {
-      width: 15px;
+      width: 18px;
     }
   }
 }
