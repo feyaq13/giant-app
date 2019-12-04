@@ -29,6 +29,7 @@ $( document ).ready(function() {
   btnPrev.addEventListener("click", slidePrev);
   document.addEventListener("load", checkButtons());
   window.addEventListener("resize", calcWidth);
+  window.addEventListener("resize", checkButtons);
 
   function calcWidth() {
     let sliderWidth = document.querySelector(".slider-reviews").clientWidth;
