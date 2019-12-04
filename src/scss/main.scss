@@ -633,12 +633,18 @@ $width: 300px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
+  padding: 20px;
 }
 
 .slider-reviews {
   overflow: hidden;
-  margin: 0 auto 20px;
+  margin: 0 auto;
   max-width: $width;
+  padding: 20px 0;
+
+  @media (max-width: 320px) {
+    max-width: 200px;
+  }
 
   @media  (min-width: $width * 1 + $padding) {
     max-width: $width * 1;
@@ -690,6 +696,10 @@ $width: 300px;
   border-radius: 50%;
   margin-right: 20px;
   width: 88px;
+
+  @media (max-width: 320px) {
+    width: 50px;
+  }
 }
 
 .about-person__name {
@@ -706,7 +716,12 @@ $width: 300px;
 .slide {
   max-width: 100%;
   min-width: $width;
-  padding: 0 20px;
+  padding: 20px;
+  transition: box-shadow .3s ease-in-out;
+
+  @media  (max-width: 320px) {
+    min-width: 100%;
+  }
 
   @media  (min-width: $width * 1 + $padding) {
     max-width: calc(100% / 1);
@@ -727,6 +742,10 @@ $width: 300px;
   @media (min-width: $width * 5 + $padding) {
     max-width: calc(100% / 5);
   }
+
+  &:hover {
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
+  }
 }
 
 /* состояние по-умолчанию, так как первой картинке предшествующих ей нет */
@@ -738,7 +757,7 @@ $width: 300px;
 .slider-reviews__next {
   position: absolute;
   z-index: 999;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
   width: 55px;
   height: 55px;
@@ -749,6 +768,15 @@ $width: 300px;
     background: #cfcfcf;
     cursor: not-allowed;
   }
+
+  @media (max-width: 480px) {
+    height: 30px;
+    width: 30px;
+
+    & .icon {
+      width: 15px;
+    }
+  }
 }
 
 .slider-reviews__next {
@@ -756,11 +784,31 @@ $width: 300px;
   z-index: 999;
   background: linear-gradient(to right, #fd712c, #ee216e);
   border-radius: 50%;
+
+  @media (max-width: 786px) and (min-width: 481px) {
+    right: 20px;
+  }
+
+  @media (max-width: 480px) {
+    right: auto;
+    left: 55%;
+    top: 90%;
+  }
 }
 
 .slider-reviews__prev {
   left: 50px;
   background: linear-gradient(to right, #fd712c, #ee216e);
   border-radius: 50%;
+
+  @media (max-width: 786px) and (min-width: 481px) {
+    left: 20px;
+  }
+
+  @media (max-width: 480px) {
+    top: 90%;
+    left: auto;
+    right: 55%;
+  }
 }
 
