@@ -611,13 +611,15 @@ h3 {
 // <-- SECTION REVIEWS
 
 $padding: 119px;
+$width: 350px;
 
 .section-reviews {
   $padding: 119px;
-  @include dimension-partition;
+  //@include dimension-partition;
   text-align: center;
   padding-top: $padding;
   padding-bottom: $padding;
+  position: relative;
 }
 
 .section-reviews__description {
@@ -631,28 +633,27 @@ $padding: 119px;
 
 .slider-reviews {
   overflow: hidden;
-  position: relative;
   margin: 0 auto 20px;
-  max-width: 250px;
+  max-width: $width;
 
-  @media  (min-width: 250px + $padding) {
-    max-width: calc(250px * 1);
+  @media  (min-width: $width * 1 + $padding) {
+    max-width: $width * 1;
   }
 
-  @media (min-width: 500px + $padding) {
-    max-width: calc(250px * 2);
+  @media (min-width: $width * 2 + $padding) {
+    max-width: $width * 2;
   }
 
-  @media (min-width: 750px + $padding) {
-    max-width: calc(250px * 3);
+  @media (min-width: $width * 3 + $padding) {
+    max-width: $width * 3;
   }
 
-  @media (min-width: 1000px + $padding) {
-    max-width: calc(250px * 4);
+  @media (min-width: $width * 4 + $padding) {
+    max-width: $width * 4;
   }
 
-  @media (min-width: 1250px + $padding) {
-    max-width: calc(250px * 5);
+  @media (min-width: $width * 5 + $padding) {
+    max-width: $width * 5;
   }
 
   button {
@@ -666,31 +667,61 @@ $padding: 119px;
   transition: transform 0.6s ease-in-out;
 }
 
-.icon {
-  vertical-align: middle;
-  padding: 10px 0;
+.slide__person {
+  display: flex;
+  align-items: center;
+}
+
+.person__about-person {
+  text-align: left;
+
+  span {
+    display: inline-block;
+  }
+}
+
+.slide__text-review {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.person__photo {
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.about-person__name {
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
+}
+
+.slide__text-review,
+.about-person__job {
+  @include text-in-block;
+  color: $color-text;
 }
 
 .slide {
   max-width: 100%;
+  min-width: $width;
 
-  @media  (min-width: 250px + $padding) {
+  @media  (min-width: $width * 1 + $padding) {
     max-width: calc(100% / 1);
   }
 
-  @media (min-width: 500px + $padding) {
+  @media (min-width: $width * 2 + $padding) {
     max-width: calc(100% / 2);
   }
 
-  @media (min-width: 750px + $padding) {
+  @media (min-width: $width * 3 + $padding) {
     max-width: calc(100% / 3);
   }
 
-  @media (min-width: 1000px + $padding) {
+  @media (min-width: $width * 4 + $padding) {
     max-width: calc(100% / 4);
   }
 
-  @media (min-width: 1250px + $padding) {
+  @media (min-width: $width * 5 + $padding) {
     max-width: calc(100% / 5);
   }
 }
@@ -706,23 +737,27 @@ $padding: 119px;
   z-index: 999;
   top: 50%;
   transform: translateY(-50%);
-  width: 25px;
-  height: auto;
+  width: 55px;
+  height: 55px;
   background-color: rgba(299, 299, 299, 0.6);
-  transition: background-color 0.3s;
+  transition: background-color .3s;
 }
 
 .slider-reviews__next {
-  right: 0;
-  border-radius: 5px 0 0 5px;
+  right: 50px;
+  z-index: 999;
+  background: linear-gradient(to right, #fd712c, #ee216e);
+  border-radius: 50%;
 }
 
 .slider-reviews__prev {
-  left: 0;
-  border-radius: 0 5px 5px 0;
+  left: 50px;
+  background: linear-gradient(to right, #fd712c, #ee216e);
+  border-radius: 50%;
 }
 
 .slider-reviews__prev:hover,
 .slider-reviews__next:hover {
   background-color: rgba(299, 299, 299, 1);
 }
+
