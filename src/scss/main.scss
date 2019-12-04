@@ -616,10 +616,14 @@ $width: 300px;
 .section-reviews {
   $padding: 119px;
   //@include dimension-partition;
-  text-align: center;
   padding-top: $padding;
   padding-bottom: $padding;
   position: relative;
+}
+
+.section-reviews__h2,
+.section-reviews__description {
+  text-align: center;
 }
 
 .section-reviews__description {
@@ -673,21 +677,19 @@ $width: 300px;
 }
 
 .person__about-person {
-  text-align: left;
-
   span {
     display: inline-block;
   }
 }
 
 .slide__text-review {
-  text-align: left;
   margin-bottom: 20px;
 }
 
 .person__photo {
   border-radius: 50%;
   margin-right: 20px;
+  width: 88px;
 }
 
 .about-person__name {
