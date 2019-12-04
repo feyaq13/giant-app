@@ -560,3 +560,47 @@ h3 {
     box-shadow: 0 0 5px 2px #fd712c;
   }
 }
+
+//
+
+// <-- SECTION VIDEO
+
+.section-video {
+  background-image: url("../images/section-video-background.jpg");
+  background-size: 1920px 400px;
+  //background: rgba(0, 0, 0, .9);
+  padding-bottom: 230px;
+  max-width: 1920px;
+  margin: auto;
+  height: 400px;
+  text-align: center;
+  position: relative;
+
+  .section-video__button-play {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    transform: translate(0, -25%);
+    border: none;
+    background: linear-gradient(to right, #fd712c, #ee216e);
+    padding: 23px 26px;
+    border-radius: 50%;
+
+    &:hover {
+      box-shadow: 0 0 5px 2px #fd712c;
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid #e3e3e3;
+      box-shadow: 0 0 5px 2px #fd712c;
+    }
+  }
+}
+
+.section-video__video{
+  display: none;
+  height: auto;
+  margin: auto;
+}
+
