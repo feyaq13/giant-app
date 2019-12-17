@@ -1,9 +1,3 @@
-// $(".slider").dnSlide({
-//   "response": true,
-//   afterClickBtnFn: function (i) {
-//     console.log(i);
-//   }
-// });
 
 $('.section-video__button-play').click(showAndPlay);
 
@@ -22,8 +16,6 @@ $( document ).ready(function() {
   const counterSlides = 5;
   let counter = 0;
   let slidesLength = calcWidth();
-
-  console.log(slidesLength);
 
   btnNext.addEventListener("click", slideNext);
   btnPrev.addEventListener("click", slidePrev);
