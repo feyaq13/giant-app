@@ -900,3 +900,77 @@ $width: 300px;
   }
 }
 
+// SECTION REVIEWS -->
+
+// <-- SECTION DOWNLOAD APP
+
+.section-download-app {
+  background: linear-gradient(to right, #fd712c, #ee216e);
+  text-align: center;
+
+  .wrapper {
+    @include dimension-partition;
+    padding-top: 119px;
+    padding-bottom: 119px;
+  }
+
+  button {
+    margin: 10px;
+    border-radius: 3px;
+    background-color: #fff;
+    transition: all .3s ease-in-out;
+
+    .button__wrapper {
+      display: inline-block;
+    }
+
+    .button__icon-wrapper {
+      display: inline-block;
+      padding: 8px;
+      background: #e3e3e3;
+
+      @media (max-width: 480px) {
+        & > svg {
+          width: 35px;
+        }
+      }
+    }
+
+    .button__text-wrapper {
+      display: inline-block;
+      text-align: left;
+      vertical-align: top;
+      padding: 15px;
+      margin-left: 10px;
+
+      @media (max-width: 480px) {
+        padding: 8px;
+        margin-left: 0;
+      }
+
+      & > span {
+        display: block;
+      }
+    }
+
+    .download {
+      font-size: 20px;
+    }
+  }
+}
+
+.section-download-app button:hover {
+  transform: translateX(20px);
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.07);
+
+  svg {
+    fill: url('#iconGradient');
+  }
+}
+
+.section-download-app__h2 {
+  color: #fff;
+  font-weight: 300;
+}
+
+// SECTION DOWNLOAD APP -->
