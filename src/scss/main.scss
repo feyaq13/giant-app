@@ -980,3 +980,45 @@ $width: 300px;
 }
 
 // SECTION DOWNLOAD APP -->
+
+// <-- FOOTER
+
+.footer {
+  padding: 60px;
+  text-align: center;
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(34, 34, 34);
+}
+
+.links__link {
+  display: inline-block;
+  text-decoration: none;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  cursor: pointer;
+
+  & svg {
+    fill: #fff;
+  }
+}
+
+.link-facebook:hover svg {
+  fill: #365899;
+}
+
+.link-twitter:hover svg {
+  fill: #1da1f2;
+}
+
+.link-dribbble:hover svg {
+  fill: #A6285F;
+}
+
+.link-behance:hover svg {
+  fill: #0067FF;
+}
+
+
