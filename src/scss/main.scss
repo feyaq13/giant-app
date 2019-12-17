@@ -17,10 +17,14 @@ $color-text: #777;
   margin: -1px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 h2,
 h3 {
   font-family: "Dosis", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h2 {
@@ -399,6 +403,8 @@ h3 {
 .section-screenshots-slider {
   background-color: #f7fafc;
   text-align: center;
+  padding-top: 119px;
+  padding-bottom: 119px;
 
   img {
     max-width: 100%;
@@ -516,7 +522,7 @@ h3 {
 
 .tariff__title,
 .tariff__price {
-  font-weight: 500;
+  font-weight: 300;
   font-family: "Dosis", sans-serif;
 }
 
