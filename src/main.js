@@ -1,3 +1,8 @@
+const $ = require('jquery');
+
+var Swiper = require('swiper').default;
+var mySwiper;
+console.log(mySwiper)
 
 $('.section-video__button-play').click(showAndPlay);
 
@@ -10,6 +15,47 @@ function showAndPlay() {
 }
 
 $( document ).ready(function() {
+  window.addEventListener('load', checkInit);
+  window.addEventListener('resize', checkInit);
+
+  function checkInit() {
+    if (window.matchMedia('(max-width: 640px)').matches) {
+      if (mySwiper) {
+        mySwiper.destroy(false, true);
+      }
+    } else if (window.matchMedia('(min-width: 641px)').matches) {
+      if (!mySwiper || mySwiper.destroyed) {
+        mySwiper = new Swiper('.swiper-container', {
+          init: true,
+          effect: 'coverflow',
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: 4,
+          initialSlide: 3,
+
+          keyboard: {
+            enabled: true,
+          },
+
+          breakpoints: {},
+
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            modifier: 1,
+            depth: 250,
+            slideShadows : false,
+          },
+
+          navigation: {
+            nextEl: '.swiper-button-next--custom',
+            prevEl: '.swiper-button-prev--custom',
+          }
+        })
+      }
+    }
+  }
+
   const imgs = document.querySelector(".slider-reviews__wrapper-imgs");
   const btnPrev = document.querySelector(".slider-reviews__prev");
   const btnNext = document.querySelector(".slider-reviews__next");
