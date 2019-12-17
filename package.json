@@ -17,10 +17,10 @@
     "postcss-modules": "^1.4.1",
     "sass": "^1.23.0",
     "semistandard": "^14.2.0",
-    "jquery": "^3.4.1"
+    "autoprefixer": "^9.6.4"
   },
   "dependencies": {
-    "autoprefixer": "^9.6.4"
+    "jquery": "^3.4.1"
   },
   "semistandard": {
     "ignore": [
