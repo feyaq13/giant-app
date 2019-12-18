@@ -14,7 +14,7 @@ function showAndPlay() {
 }
 
 $( document ).ready(function() {
-  window.addEventListener('load', checkInit);
+  checkInit();
   window.addEventListener('resize', checkInit);
 
   function checkInit() {
