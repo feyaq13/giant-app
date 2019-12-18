@@ -464,9 +464,6 @@ h3 {
   z-index: 5;
   top: 50%;
   position: absolute;
-  width: 55px;
-  height: 55px;
-  background-color: rgba(299, 299, 299, .6);
   transition: background-color .3s;
 
   &[aria-disabled="true"] {
@@ -496,16 +493,20 @@ h3 {
   }
 }
 
-.swiper-button-next--custom {
-  right: 50px;
+.carousel-button {
+  width: 55px;
+  height: 55px;
   background: linear-gradient(to right, #fd712c, #ee216e);
   border-radius: 50%;
+  border: none;
+}
+
+.swiper-button-next--custom {
+  right: 50px;
 }
 
 .swiper-button-prev--custom {
   left: 50px;
-  background: linear-gradient(to right, #fd712c, #ee216e);
-  border-radius: 50%;
 }
 
 
@@ -853,9 +854,6 @@ $width: 300px;
   z-index: 999;
   top: 60%;
   transform: translateY(-50%);
-  width: 55px;
-  height: 55px;
-  background-color: rgba(299, 299, 299, 0.6);
   transition: background-color .3s;
 
   &:disabled {
@@ -892,8 +890,6 @@ $width: 300px;
 .slider-reviews__next {
   right: 50px;
   z-index: 999;
-  background: linear-gradient(to right, #fd712c, #ee216e);
-  border-radius: 50%;
 
   @media (max-width: 786px) and (min-width: 481px) {
     right: 20px;
@@ -907,8 +903,6 @@ $width: 300px;
 
 .slider-reviews__prev {
   left: 50px;
-  background: linear-gradient(to right, #fd712c, #ee216e);
-  border-radius: 50%;
 
   @media (max-width: 786px) and (min-width: 481px) {
     left: 20px;
