@@ -23,6 +23,7 @@ $( document ).ready(function() {
         mySwiper.destroy(false, true);
       }
     } else if (window.matchMedia('(min-width: 641px)').matches) {
+      // если его нет или его состояние "неактивно"
       if (!mySwiper || mySwiper.destroyed) {
         mySwiper = new Swiper('.swiper-container', {
           init: true,
@@ -35,8 +36,6 @@ $( document ).ready(function() {
           keyboard: {
             enabled: true,
           },
-
-          breakpoints: {},
 
           coverflowEffect: {
             rotate: 0,
@@ -59,21 +58,20 @@ $( document ).ready(function() {
   const btnPrev = document.querySelector(".slider-reviews__prev");
   const btnNext = document.querySelector(".slider-reviews__next");
   const counterSlides = 5;
-  let counter = 1;
+  let currentPage = 1;
   let sliderPagesLength = calcWidth();
 
   btnNext.addEventListener("click", slideNext);
   btnPrev.addEventListener("click", slidePrev);
-  checkButtons();
+  initButtons();
   window.addEventListener("resize", calcWidth);
-  window.addEventListener("resize", checkButtons);
+  window.addEventListener("resize", initButtons);
 
   function calcWidth() {
     viewportSlider.style.transform = '';
-    counter = 1;
+    currentPage = 1;
     let sliderWidth = document.querySelector(".slider-reviews").clientWidth;
     let slideWidth = document.querySelectorAll(".slide")[0].clientWidth;
-    console.log(sliderWidth, slideWidth);
 
     sliderPagesLength =
       Math.ceil(counterSlides / (sliderWidth / slideWidth));
@@ -81,30 +79,26 @@ $( document ).ready(function() {
     return sliderPagesLength
   }
 
-  function checkButtons() {
-    btnPrev.disabled = (counter === 1);
-    btnNext.disabled = (counter === sliderPagesLength);
+  function initButtons() {
+    btnPrev.disabled = (currentPage === 1);
+    btnNext.disabled = (currentPage === sliderPagesLength);
   }
 
   function slideNext() {
-    if (counter !== sliderPagesLength) {
+    if (currentPage !== sliderPagesLength) {
       viewportSlider.style.transform += "translate(-100%)";
-      ++counter;
-      console.log(counter + '/' + sliderPagesLength);
+      ++currentPage;
 
-      btnPrev.disabled = (counter === 1);
-      btnNext.disabled  = (counter === sliderPagesLength);
+      initButtons()
     }
   }
 
   function slidePrev() {
-    if (counter !== 1) {
-      --counter;
-      console.log(counter + '/' + sliderPagesLength);
+    if (currentPage !== 1) {
+      --currentPage;
       viewportSlider.style.transform += "translate(100%)";
 
-      btnPrev.disabled = (counter === 1);
-      btnNext.disabled = (counter === sliderPagesLength);
+      initButtons()
     }
   }
 
