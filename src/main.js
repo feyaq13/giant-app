@@ -63,9 +63,9 @@ $( document ).ready(function() {
 
   btnNext.addEventListener("click", slideNext);
   btnPrev.addEventListener("click", slidePrev);
-  initButtons();
+  updateButtons();
   window.addEventListener("resize", calcWidth);
-  window.addEventListener("resize", initButtons);
+  window.addEventListener("resize", updateButtons);
 
   function calcWidth() {
     viewportSlider.style.transform = '';
@@ -79,7 +79,7 @@ $( document ).ready(function() {
     return sliderPagesLength
   }
 
-  function initButtons() {
+  function updateButtons() {
     btnPrev.disabled = (currentPage === 1);
     btnNext.disabled = (currentPage === sliderPagesLength);
   }
@@ -89,7 +89,7 @@ $( document ).ready(function() {
       viewportSlider.style.transform += "translate(-100%)";
       ++currentPage;
 
-      initButtons()
+      updateButtons()
     }
   }
 
@@ -98,7 +98,7 @@ $( document ).ready(function() {
       --currentPage;
       viewportSlider.style.transform += "translate(100%)";
 
-      initButtons()
+      updateButtons()
     }
   }
 
